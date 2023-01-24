@@ -1,5 +1,5 @@
 
-# OPEN LUNAR BASIC OPEN OS
+# 🐱‍👤OPEN LUNAR BASIC OPEN OS
 
 Based on my very own LunarOS. this repo uses some of nanobytes code to make it easier to understand
 than what is in my private version.
