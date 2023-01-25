@@ -33,3 +33,10 @@ Discord : Sulfur#6633
 
 Email: mellurblur@gmail.com
 
+# Roadmap
+
+- Start working on the FAT system
+- Start working on the GUI
+- Start working on testing on real hardware, this is hard because as of now LUNAR is NOT compatable with UEFI BIOS.
+- Work on getting the OS to boot into a 32bit environment
+- Get all of the current project on this repo, that will be done like tonight 
