@@ -1,1 +1,1 @@
-qemu-system-i386 -fda builds/lunar.img
+qemu-system-i386 -fda build/lunar.img
