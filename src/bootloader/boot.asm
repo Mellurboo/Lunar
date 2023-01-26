@@ -169,7 +169,7 @@ read_disk:
     popa
 
     pop ax                 ;load registers we modify
-    pop bxs
+    pop bx
     pop cx
     pop dx
     pop di
