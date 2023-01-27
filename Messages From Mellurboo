@@ -10,3 +10,22 @@ if you just credited me, im not gonna like sue you if you dont but... its just a
 something that doesn't work let me know on discord or somthing (Sulfur#6633). I don't go to like idk harvard for computer science. also im mainly a game developer
 
 either way i hope you like it. ill probably keep this updated with useful info. thank you for using LUNAR BASIC OPEN OS <3
+
+(27/01/2023)
+
+Hello another update from me how lucky you are, the project LUNAR OS is going well, I got disk reading working last night thanks to nanobyte dev, im working on my FAT file
+system with the help of the community. I can't wait to start writing in C (as I indicated in the boot.asm comments LMAO). anyway the main thing im worried about is getting out
+of real mode and getting to a 32 bit environment and such, this will allow me to do some really cool stuff with GUI which is really hard in like 16 bit.
+
+this will require me to make a 2 part boot loader which isnt too much of a task, especally because soon the bootloader will be in C to some degree
+I'm also moving this document into a TXTINFO folder which will also document things like error codes so that if you encounter an issue thats where ill leave things and
+how to fix it (if you can, its probably my bad code)
+
+When im home i write up all of the code, but alot of my ideas and things i want to do (which arnt many, lunar os is being carried by nanobye, dudes a king) i think of in
+school when im bored, matter of fact im writing this in school rn (we're doing psudocode rn or something). anyway i thaught it would be cool if people knew more about the process
+of making LUNAR. while im having alot of fun i hope when you get to cloning the project and taking a look and making your own additions (or even fixes) I look forward to seeing them
+myself, the idea is i want to make this so that people can push their own changes as long as i approve them first, my goal is for this project to be the center of the
+community, I love the OSDEV community and i cant wait to see what LUNAR OS becomes.
+
+before i wrap this up I wanna leave a small note to my friend Joe. we talk about OSDEV here in school (ikr what nerds) anyway hes given me alot of good ideas and has come
+up with some really interesting points its great talking to him!
