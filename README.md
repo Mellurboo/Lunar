@@ -35,7 +35,7 @@ Email: mellurblur@gmail.com
 
 # Roadmap
 
-- Start working on the FAT system
+- Start working on the FAT system [working on]
 - Start working on the GUI
 - Start working on testing on real hardware, this is hard because as of now LUNAR is NOT compatable with UEFI BIOS.
 - Work on getting the OS to boot into a 32bit environment
