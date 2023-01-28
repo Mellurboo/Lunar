@@ -2,6 +2,8 @@
 ; and for the sake of it being open source so you dont have to see my spagetti ill add comments and stuff from his
 ; video, this is probably the worst part abt making an os, i cant wait to start working in C
 
+; update: this file became the kernel LMAO
+
 org 0x0
 bits 16
 
