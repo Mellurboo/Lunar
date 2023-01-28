@@ -2,14 +2,29 @@
 ; and for the sake of it being open source so you dont have to see my spagetti ill add comments and stuff from his
 ; video, this is probably the worst part abt making an os, i cant wait to start working in C
 
-org 0x7C00
+org 0x0
 bits 16
 
 %define ENDL 0x0D, 0x0A
 
-init:
-    jmp main
 
+
+init:
+    MOV AH, 06h    ; Scroll up function
+    XOR AL, AL     ; Clear entire screen
+    XOR CX, CX     ; Upper left corner CH=row, CL=column
+    MOV DX, 184FH  ; lower right corner DH=row, DL=column 
+    MOV BH, 1Eh    ; YellowOnBlue
+    INT 10H
+
+    ;printing boot msg
+    mov si, msg_booting
+    call printscr
+
+
+.halt:
+    cli
+    hlt 
 ;--
 ;Printing the boot string to the screen
 printscr:
@@ -32,26 +47,4 @@ printscr:
     ret
 
 ; string printing done!
-
-main:
-    ; >> Segments. ds & es -> ax 
-    mov ax, 0   
-    mov ds, ax
-    mov es, ax
-
-    ; >> Stack
-    mov ss, ax
-    mov sp, 0x7C00 ; the stack goes at the start of our os. so it cant overwrite stuff
-    
-    ;printing boot msg
-    mov si, msg_booting
-    call printscr
-
-.halt:
-    jmp .halt
-;
-
 msg_booting: db 'Lunar KRNL [OK]', ENDL, 0
-
-times 510-($-$$) db 0
-dw 0AA55h
