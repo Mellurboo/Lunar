@@ -18,7 +18,9 @@ init:
     INT 10H
 
     ;printing boot msg
-    mov si, msg_booting
+    mov si, msg_kernel_load
+    call printscr
+    mov si, msg_welcome
     call printscr
 
 
@@ -47,4 +49,5 @@ printscr:
     ret
 
 ; string printing done!
-msg_booting: db 'Lunar KRNL [OK]', ENDL, 0
+msg_kernel_load:        db 'Lunar KRNL [OK]', ENDL, 0
+msg_welcome:            db 'Welcome to Lunar OS', ENDL, 0

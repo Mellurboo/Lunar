@@ -65,7 +65,7 @@ init:
     push es 
     mov ah, 08h
     int 13h
-    jc floppy_error
+    jc floppy_err
     pop es
 
     and cl, 0x3F                    ;remove top 2 bits
@@ -225,12 +225,12 @@ printscr:
 
 ; string printing done!
 
-floppy_error:
+floppy_err:
     jmp key_reboot
 
 
 key_reboot:
-    mov si, msg_fatal_error
+    mov si, msg_crsh_error
     call printscr
 
     mov ah, 0
@@ -303,7 +303,9 @@ read_disk:
 
 .fail:
     ; all attemps used and the bootloader cannot read the drive
-    jmp floppy_error
+    mov si, msg_readNO
+    call printscr
+    jmp floppy_err
 
 .done:
     popa
@@ -314,7 +316,7 @@ read_disk:
     pop dx
     pop di
 
-    mov si, msg_readPass
+    mov si, msg_readOK
     call printscr
     ret
 
@@ -324,16 +326,17 @@ disk_reset:
     mov ah, 0
     stc
     int 13h
-    jc floppy_error
+    jc floppy_err
     popa
     ret
 
-msg_booting:            db 'Lunar BOOT [OK]', ENDL, 0
+msg_booting:            db 'Lunar Starting', ENDL, 0
 
-msg_readPass:           db 'Lunar READ [OK]', ENDL, 0
+msg_readOK:           db 'READ [OK]', ENDL, 0
+msg_readNO :           db 'READ [NO]', ENDL, 0
 
-msg_missing_krnl:       db 'KRNL ?', ENDL, 0
-msg_fatal_error:        db 'Fatal err', ENDL, 0
+msg_missing_krnl:       db 'KRNL?', ENDL, 0
+msg_crsh_error:        db 'err1', ENDL, 0
 
 ; --- info
 
